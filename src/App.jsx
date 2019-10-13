@@ -118,7 +118,9 @@ function TodoList() {
   }, []);
 
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem(LS_KEY) || "");
+    const todos = JSON.parse(
+      localStorage.getItem(LS_KEY) || JSON.stringify([])
+    );
     setTodos(todos);
   }, []);
 
